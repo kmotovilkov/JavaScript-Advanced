@@ -1,5 +1,6 @@
 .idea
-
+/.docx*
+/.pptx*
 *.tmp
 
 # Word temporary
@@ -21,5 +22,4 @@ Backup of *.docx*
 *.~vsd*
 
 
-/~$*.docx*
-/~$*.pptx*
+
