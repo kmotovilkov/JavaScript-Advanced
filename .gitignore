@@ -1,13 +1,14 @@
 .idea
-/.docx*
-/.pptx*
+
+
+### MicrosoftOffice ###
 *.tmp
 
 # Word temporary
-~$*.docx*
+~$*.doc*
 
 # Word Auto Backup File
-Backup of *.docx*
+Backup of *.doc*
 
 # Excel temporary
 ~$*.xls*
@@ -16,10 +17,9 @@ Backup of *.docx*
 *.xlk
 
 # PowerPoint temporary
-~$*.pptx*
+~$*.ppt*
 
 # Visio autosave temporary files
 *.~vsd*
-
 
 
