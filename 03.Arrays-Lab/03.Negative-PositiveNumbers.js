@@ -9,7 +9,6 @@ function negPosNums(arr) {
         }
     }
     console.log(arr1);
-
 }
 
 negPosNums([7, -2, 8, 9]);
