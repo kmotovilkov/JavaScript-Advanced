@@ -1,33 +1,22 @@
 function solve() {
-    document.querySelector("button").addEventListener("click", onClick);
-    let list = {};
 
-    const items = document.querySelector("ol").querySelectorAll("li");
-    [...items].forEach(e => {
-        if (e.textContent.trim().length === 0) {
-            return;
-        }
-        const char = e.textContent[0].toLocaleUpperCase();
-        list[char] = e.textContent;
-    });
+    const input = document.querySelector('input');
+    const list = document.querySelectorAll('li');
+
+    document.querySelector("button").addEventListener("click", onClick);
 
 
     function onClick() {
-        const input = document.querySelector("input");
-        const value = input.value;
-        const char = value[0].toLocaleUpperCase();
-
-
-        if (list.hasOwnProperty(char) === false) {
-            list[char] = value;
-
-        } else {
-            list[char] = list[char] + ", " + value;
+        if (input.value === '') {
+            return;
         }
 
-        let index = char.charCodeAt(0) - 65;
-        items[index].textContent = list[char];
+        const name = input.value[0].toUpperCase() + input.value.slice(1).toLowerCase();
+        const position = name.charCodeAt(0) - 65;
+        const people = list[position].textContent.split(', ').filter(Boolean);
 
-        input.value = "";
+        people.push(name);
+        list[position].textContent = people.join(', ');
+        input.value = '';
     }
 }
