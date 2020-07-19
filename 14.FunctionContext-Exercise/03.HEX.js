@@ -29,7 +29,7 @@ class Hex {
     }
 
     static parce(hexValue) {
-
+        return parseInt(hexValue, 16);
     }
 }
 
