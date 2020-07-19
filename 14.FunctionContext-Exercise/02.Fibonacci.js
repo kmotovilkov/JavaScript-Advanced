@@ -1,12 +1,12 @@
 function getFibonator() {
-    let previus = 0;
-    let current = 1;
+    let current = 0;
+    let next = 1;
 
 
     function fibonator() {
-        let newNumber = previus + current;
-        previus = current;
-        current = newNumber;
+        let newNumber =current+next;
+        current = next;
+        next = newNumber;
 
         return current;
     }
