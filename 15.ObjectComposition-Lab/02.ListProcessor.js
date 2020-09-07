@@ -7,7 +7,7 @@ function solve(commands) {
         } else if (op === 'remove') {
             return acc.filter(i => i !== word);
         }
-        console.log(acc.join(', '));
+        console.log(acc.join(','));
         return acc;
     }, []);
 }
