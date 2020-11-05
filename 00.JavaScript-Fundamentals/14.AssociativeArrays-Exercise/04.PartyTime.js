@@ -10,7 +10,7 @@ function solve(arr) {
         }
     }
     console.log([...guestMap].length);
-    let sort = [...guestMap].sort((a, b) => b[0]-a[0]).forEach(e=>{
+    [...guestMap].sort((a, b) => b[0]-a[0]).forEach(e=>{
         console.log(e[0])});
 
 }
