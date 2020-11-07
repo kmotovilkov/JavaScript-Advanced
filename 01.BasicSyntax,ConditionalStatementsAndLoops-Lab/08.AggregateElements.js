@@ -1,16 +1,15 @@
-function aggregate(arr) {
+function solve(arr) {
     let sum = 0;
-    let sum2 = 0;
-    let con = "";
-    for (let i = 0; i < arr.length; i++) {
-        sum += +arr[i];
-        sum2 += 1 / +arr[i]
-        con += arr[i];
+    let inverseSum = 0;
+    let concat = '';
+
+    for (let num of arr) {
+        sum += num;
+        inverseSum += 1 / num;
+        concat += num.toString();
     }
-    console.log(sum);
-    console.log(sum2);
-    console.log(con);
+    console.log(`${sum}\n${inverseSum}\n${concat}`);
 }
 
-
-aggregate([1, 2, 3]);
+solve([1, 2, 3]);
+solve([2, 4, 8, 16]);
