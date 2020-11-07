@@ -1,12 +1,7 @@
-function stringLength(a, b, c) {
-    let sum;
-    let average;
-
-    sum = a.length + b.length + c.length;
-    average = Math.floor(sum / 3);
-
-    console.log(sum);
-    console.log(average);
+function solve(a, b, c) {
+    let lengthSum=a.length+b.length+c.length;
+    console.log(lengthSum+'\n'+Math.floor(lengthSum/3));
 }
 
-stringLength('pasta', '5', '22.3');
+solve('chocolate', 'ice cream', 'cake');
+solve('pasta', '5', '22.3');

@@ -1,31 +1,26 @@
-function dayOfWeek(day) {
-    
-    switch (day) {
-        case "Monday":
-            console.log(1);
-            break;
-        case "Thursday":
-            console.log(2);
-            break;
-        case  "Wednesday":
-            console.log(3);
-            break;
-        case "Tuesday":
-            console.log(4);
-            break;
-        case  "Friday":
-            console.log(5);
-            break;
-        case  "Saturday":
-            console.log(6);
-            break;
-        case  "Sunday":
-            console.log(7);
-            break;
-        default:
-            console.log("error");
-            break;
+function solve(day) {
+    day = day.toLowerCase();
+    let output;
+    if (day === 'monday') {
+        output = 1;
+    } else if (day === 'tuesday') {
+        output = 2;
+    } else if (day === 'wednesday') {
+        output = 3;
+    } else if (day === 'thursday') {
+        output = 4;
+    } else if (day === 'friday') {
+        output = 5;
+    } else if (day === 'saturday') {
+        output = 6;
+    } else if (day === 'sunday') {
+        output = 7;
+    } else {
+        output = 'error';
     }
+    console.log(output);
 }
 
-dayOfWeek("Monday");
+solve('Monday');
+solve('Friday');
+solve('Invalid');
