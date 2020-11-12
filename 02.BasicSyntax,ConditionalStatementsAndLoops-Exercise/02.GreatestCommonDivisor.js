@@ -1,18 +1,11 @@
-function gcd(num1, num2) {
-
-    num1 = Math.abs(num1);
-    num2 = Math.abs(num2);
-    while (num2 !== 0) {
-
-        let abs = num1 % num2;
-        num1 = num2;
-        num2 = abs;
-
+function solve(n1,n2){
+    while(n2){
+        let a=n2;
+        n2=n1%n2;
+        n1=a;
     }
-    console.log(num1);
-
+    console.log(n1);
 }
 
-
-gcd(15, 5);
-gcd(2154, 458);
+solve(15, 5);
+solve(2154, 458);

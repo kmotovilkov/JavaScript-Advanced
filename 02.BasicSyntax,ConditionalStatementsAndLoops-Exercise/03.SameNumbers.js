@@ -2,8 +2,6 @@ function sameNums(num) {
     num = num.toString();
     let sum = 0;
     let result = true;
-
-
     for (let i = 0; i < num.length; i++) {
         sum += +num[i];
 
@@ -16,4 +14,4 @@ function sameNums(num) {
 
 }
 
-sameNums(1234)
+sameNums(1234);
