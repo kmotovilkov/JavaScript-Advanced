@@ -1,12 +1,16 @@
 function townsToJSON(arr) {
-    let town = [];
-    for (let line of arr.slice(1)) {
-        let tokens = line.split(/\s*\|\s*/);
-
-        let townObj = {Town: tokens[1], Latitude: Number((Number(tokens[2])).toFixed(2)), Longitude: Number((Number(tokens[3])).toFixed(2))};
-       town.push(townObj);
+    let data = arr.map(row => row.split("|").filter(x => x).map(x => x.trim()));
+    let propName = data.shift();
+    let towns = [];
+    for (let el of data) {
+        let obj = {
+            [propName[0]]: el[0],
+            [propName[1]]: Number(Number(el[1]).toFixed(2)),
+            [propName[2]]: Number(Number(el[2]).toFixed(2))
+        };
+        towns.push(obj);
     }
-    console.log(JSON.stringify(town))
+    console.log(JSON.stringify(towns));
 }
 
 townsToJSON(['| Town | Latitude | Longitude |',

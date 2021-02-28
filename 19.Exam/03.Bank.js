@@ -73,4 +73,4 @@ bank.depositMoney(4151596,555);
 
 console.log(bank.withdrawMoney(6233267, 125));
 
-console.log(bank.customerInfo(6233267));
+console.log(bank.customerInfo(6233267)) ;
