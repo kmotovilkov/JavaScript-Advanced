@@ -1,26 +1,20 @@
 function cappyJuice(arr) {
-
-    let quantities = {};
-    let count = {};
-
+    let products = {};
+    let result = {};
     for (let line of arr) {
-
-        let args = line.split(" => ");
-        let fruit = args[0];
-        let quantity = Number(args[1]);
-
-        if (!quantities.hasOwnProperty(fruit)) {
-            quantities[fruit] = 0;
+        let [productName, quantity] = line.split(" => ");
+        quantity = Number(quantity);
+        if (!products.hasOwnProperty(productName)) {
+            products[productName] = 0;
         }
+        products[productName] += quantity;
 
-        quantities[fruit] += quantity;
-        if (quantities[fruit] >= 1000) {
-            count[fruit] = parseInt(quantities[fruit]/1000);
+        if (products[productName] > 1000) {
+            result[productName] = parseInt(products[productName] / 1000);
         }
     }
-
-    for (let key of Object.keys(count)) {
-        console.log(`${key} => ${count[key]}`);
+    for (let product in result) {
+        console.log(`${product} => ${result[product]}`);
     }
 }
 
