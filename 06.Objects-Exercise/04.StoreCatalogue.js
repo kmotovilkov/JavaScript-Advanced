@@ -1,27 +1,24 @@
 function storeCatalogue(arr) {
-
-    let map = new Map();
-
+    let result = {};
     for (let line of arr) {
-
-        let [product, price] = line.split(" : ");
-        map.set(product,price);
+        let [name, price] = line.split(" : ");
+        price = Number(price);
+        let initialLetter = name[0];
+        if (!result[initialLetter]) {
+            result[initialLetter] = [];
+        }
+        result[initialLetter].push({name, price});
     }
+    let sortedLetter = Object.entries(result)
+        .sort((a, b) => a[0].localeCompare(b[0]));
+    for (let i = 0; i < sortedLetter.length; i++) {
+        let sortedByName = sortedLetter[i][1].sort((a, b) => a.name.localeCompare(b.name));
 
-    let initials=new Set();
-
-    Array.from(map.keys()).forEach(k=>initials.add(k[0]));
-
-    for(let char of Array.from(initials.keys()).sort()) {
-        console.log(char);
-
-        for(let product of Array.from(map.keys()).sort()){
-            if(product.startsWith(char)) {
-                console.log(`  ${product}: ${map.get(product)}`);
-            }
+        console.log(`${sortedLetter[i][0]}`)
+        for (let product of sortedByName) {
+            console.log(`  ${product.name}: ${product.price} `);
         }
     }
-
 }
 
 storeCatalogue(['Appricot : 20.4',
