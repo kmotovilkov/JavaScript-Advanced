@@ -1,26 +1,17 @@
 function autoEngineering(arr) {
-    let cars = new Map();
-
+    let result = {};
     for (let line of arr) {
-        let [brand, model, count] = line.split(" | ");
-        count = Number(count);
-
-        if (!cars.get(brand)) {
-            cars.set(brand, new Map());
+        let [carBrand, carModel, producedCars] = line.split(" | ");
+        producedCars = Number(producedCars);
+        if (!result[carBrand]) {
+            result[carBrand] = [];
         }
-        if (!cars.get(brand).get(model)) {
-            cars.get(brand).set(model, 0);
-        }
-
-        cars.get(brand).set(model, cars.get(brand).get(model) + count);
+        result[carBrand].push({carModel, producedCars});
     }
-
-
-    for (let [brand, modelCount] of cars) {
-        console.log(brand);
-
-        for (let [model, count] of modelCount) {
-            console.log(`###${model} -> ${count}`);
+    for (let cars of Object.entries(result)) {
+        console.log(cars[0]);
+        for (let modelCountObj of cars[1]) {
+            console.log(`###${modelCountObj.carModel} -> ${modelCountObj.producedCars}`);
         }
     }
 }
